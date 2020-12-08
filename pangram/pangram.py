@@ -1,6 +1,7 @@
-ABC = set("abcdefghijklmnopqrstuvwxyz")
-ABC_LENGTH = len(ABC)
+from string import ascii_lowercase
 
+ABC = set(ascii_lowercase)
+ABC_LENGTH = len(ascii_lowercase)
 
 
 def is_pangram(sentence):
