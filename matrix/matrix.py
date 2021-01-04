@@ -1,8 +1,7 @@
 class Matrix:
     def __init__(self, matrix_string: str):
         lines = matrix_string.splitlines()
-        splitlines_ = [list(map(int, line.split())) for line in lines]
-        self.__matrix = splitlines_
+        self.__matrix = [list(map(int, line.split())) for line in lines]
 
     def row(self, index):
         return self.__matrix[index - 1]
