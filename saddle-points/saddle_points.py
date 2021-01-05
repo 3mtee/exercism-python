@@ -1,21 +1,12 @@
 def saddle_points(matrix):
-    saddles: list[map] = []
+    if len(set(map(len, matrix))) > 1:
+        raise ValueError("Irregular matrices are forbidden")
 
-    row_len = None
-    for row_num, row in enumerate(matrix):
-        saddle = max(row)
-        if row_num == 0:
-            row_len = len(row)
-
-        if len(row) != row_len:
-            raise ValueError("Irregular matrices are forbidden")
-
-        saddles += [{"row": row_num + 1, "column": i + 1, "value": s} for i, s in enumerate(row) if s == saddle]
-
-    for i, saddle in enumerate(saddles.copy()):
-        col_num = saddle["column"] - 1
-        for row in matrix:
-            if row[col_num] < saddle["value"]:
-                saddles[i] = None
-    return [{"row": s["row"], "column": s["column"]} for s in saddles if s]
+    rotated_matrix = list(zip(*matrix))
+    points = set()
+    for i, row in enumerate(matrix):
+        for j, x in enumerate(row):
+            if x == max(row) and x == min(rotated_matrix[j]):
+                points.add((i, j))
+    return [{"row": p[0] + 1, "column": p[1] + 1} for p in points]
 
