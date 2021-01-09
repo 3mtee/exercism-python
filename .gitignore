@@ -1,35 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@3mtee 
-3mtee
-/
-exercism-python
-1
-0
-0
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-exercism-python/.gitignore
-@3mtee
-3mtee Initial commit
-Latest commit d6557ec in 1 minute
- History
- 1 contributor
-129 lines (105 sloc)  1.76 KB
-IntelliJ IDEA   
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -172,3 +140,4 @@ Training
 Blog
 About
 
+.idea
